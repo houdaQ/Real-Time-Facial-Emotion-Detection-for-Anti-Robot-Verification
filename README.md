@@ -2,25 +2,31 @@
 
 Ce projet présente un système de vérification anti-robot novateur qui remplace les CAPTCHA traditionnels par une reconnaissance d'émotions faciales en temps réel. En demandant à l'utilisateur d'exprimer une émotion spécifique (ex: un sourire), le système utilise un réseau de neurones convolutifs (CNN) pour valider la présence humaine et contrer les scripts automatisés.  
 
-🚀 Caractéristiques Principales
+## 🚀 Caractéristiques Principales
 
-- Vérification Dynamique : Demande aléatoire d'une émotion cible (Joie, Surprise, Neutre, etc.).  
-- Modèle CNN Robuste : Entraîné sur le jeu de données FER-2013, atteignant une précision de 67,4% avec l'optimiseur Adam et le "Learning Rate Decay".  
-- Analyse Temporelle : Utilise un vote majoritaire sur $n$ images consécutives pour éviter les faux positifs.  
-Mesures Anti-Fraude :
+### Vérification Dynamique : 
+Demande aléatoire d'une émotion cible (Joie, Surprise, Neutre, etc.).  
+### Modèle CNN Robuste : 
+Entraîné sur le jeu de données FER-2013, atteignant une précision de 67,4% avec l'optimiseur Adam et le "Learning Rate Decay".  
+### Analyse Temporelle : 
+Utilise un vote majoritaire sur $n$ images consécutives pour éviter les faux positifs.  
+### Mesures Anti-Fraude :
 - Liveness Detection : Surveillance des changements de pixels inter-trames pour bloquer les photos ou vidéos pré-enregistrées.  
 - Pression Temporelle : Un compte à rebours limite la fenêtre d'attaque.  
 - Seuil de Confiance : Rejet des prédictions ambiguës (seuil par défaut de 0,70).  
 
-🏗️ Architecture du Système
+## 🏗️ Architecture du Système
 
 Le système est divisé en trois couches distinctes: 
-1. Modèle de Classification : Un backbone CNN avec 3 blocs de convolution, Batch Normalization et Dropout.  
-2. Moteur d'Inférence : Capture vidéo via OpenCV, détection de visage par Haar Cascades et prétraitement en nuances de gris ($48\times48$ pixels). 
-3. Couche Applicative : Interface utilisateur intuitive avec retour visuel en temps réel (code couleur vert/rouge).  
+### 1. Modèle de Classification : 
+Un backbone CNN avec 3 blocs de convolution, Batch Normalization et Dropout.  
+### 2. Moteur d'Inférence : 
+Capture vidéo via OpenCV, détection de visage par Haar Cascades et prétraitement en nuances de gris ($48\times48$ pixels). 
+### 3. Couche Applicative : 
+Interface utilisateur intuitive avec retour visuel en temps réel (code couleur vert/rouge).  
 
 
- 🛠️ Installation & Utilisation
+## 🛠️ Installation & Utilisation
 
  Prérequis
  - Python 3.x
@@ -28,19 +34,23 @@ Le système est divisé en trois couches distinctes:
  - OpenCV
  - NumPy
 
-- Installation
-Bash
+### Installation
+
+
+```bash
 git clone https://github.com/houdaQ/Real-Time-Facial-Emotion-Detection-for-Anti-Robot-Verification.git
 cd Real-Time-Facial-Emotion-Detection-for-Anti-Robot-Verification
 pip install -r requirements.txt
+```
 
-- Exécution
-Bash
+### Exécution
+```bash
 python main.py
+```
 
 
-📝 Auteurs
-- Houda Najib Alaoui  
-- Najlae Moussaoui
-- Zakaria Mouhib
+### 📝 Auteurs
+#### - Houda Najib Alaoui  
+#### - Najlae Moussaoui
+#### - Zakaria Mouhib
 - Excellence Department of Computer Science, Université Ibn Zohr 
